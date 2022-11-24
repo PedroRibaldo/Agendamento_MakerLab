@@ -1,6 +1,6 @@
 import { styled } from "../../styles/theme";
 import { keyframes } from '@stitches/react';
-import { violet, blackA, mauve, green } from '@radix-ui/colors';
+import { violet, blackA, mauve, green, blue, blueA } from '@radix-ui/colors';
 import * as Dialog from '@radix-ui/react-dialog';
 
 export const overlayShow = keyframes({
@@ -39,13 +39,13 @@ export const overlayShow = keyframes({
   export const DialogTitle = styled(Dialog.Title, {
     margin: 0,
     fontWeight: 500,
-    color: mauve.mauve12,
+    color: '$blue_900',
     fontSize: 17,
   });
   
   export const DialogDescription = styled(Dialog.Description, {
     margin: '10px 0 20px',
-    color: mauve.mauve11,
+    color: '$blue_300',
     fontSize: 15,
     lineHeight: 1.5,
   });
@@ -85,6 +85,11 @@ export const overlayShow = keyframes({
     defaultVariants: {
       variant: 'violet',
     },
+
+    '&:hover': {
+      cursor: 'pointer',
+      transition: '0.5s',
+    },
   });
   
   export const IconButton = styled('button', {
@@ -101,7 +106,12 @@ export const overlayShow = keyframes({
     top: 10,
     right: 10,
   
-    '&:hover': { backgroundColor: violet.violet4 },
+    '&:hover': {
+      backgroundColor: '$gray_300',
+      transition: '0.5s',
+      cursor: 'pointer',
+    },
+
     '&:focus': { boxShadow: `0 0 0 2px ${violet.violet7}` },
   });
   
@@ -115,7 +125,7 @@ export const overlayShow = keyframes({
   
   export const Label = styled('label', {
     fontSize: 15,
-    color: violet.violet11,
+    color: '$blue_800',
     width: 90,
     textAlign: 'right',
   });
@@ -131,9 +141,29 @@ export const overlayShow = keyframes({
     padding: '0 10px',
     fontSize: 15,
     lineHeight: 1,
-    color: violet.violet11,
-    boxShadow: `0 0 0 1px ${violet.violet7}`,
+    color: '$blue_800',
+    boxShadow: `0 0 0 1px ${blueA.blueA7}`,
     height: 35,
   
-    '&:focus': { boxShadow: `0 0 0 2px ${violet.violet8}` },
+    '&:focus': { boxShadow: `0 0 0 2px ${blueA.blueA8}` },
+  });
+
+  
+
+  export const Select = styled('select', {
+    all: 'unset',
+    width: '100%',
+    flex: '1',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 4,
+    padding: '0 10px',
+    fontSize: 15,
+    lineHeight: 1,
+    color: '$blue_800',
+    boxShadow: `0 0 0 1px ${blueA.blueA7}`,
+    height: 35,
+  
+    '&:focus': { boxShadow: `0 0 0 2px ${blueA.blueA8}` },
   });

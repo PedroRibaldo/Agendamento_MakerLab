@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { DialogOverlay, DialogContent, DialogTitle, DialogDescription, Flex, Button, IconButton, Fieldset, Label, Input} from './styles';
+import { DialogOverlay, DialogContent, DialogTitle, DialogDescription, Flex, Button, IconButton, Fieldset, Label, Input, Select} from './styles';
 import { FiX, FiPlus } from "react-icons/fi";
 
 export const PopUp = () => {
@@ -14,7 +14,7 @@ export const PopUp = () => {
                 <DialogContent>
                     <DialogTitle>Horario de Agendamento</DialogTitle>
                     <DialogDescription>
-                        Escolha data e horário para agendar o espaço
+                        Escolha data e horário para agendar o local
                     </DialogDescription>
                     <Fieldset>
                         <Label htmlFor="name">Nome do reservante</Label>
@@ -22,7 +22,18 @@ export const PopUp = () => {
                     </Fieldset>
                     <Fieldset>
                         <Label>RA</Label>
-                        <Input id="RA" placeholder='Seu RA' />
+                        <Input id="RA" placeholder='Seu RA'/>
+                    </Fieldset>
+                    <Fieldset>
+                        <Label>Número de Pessoas</Label>
+                        <Input id="NumPessoas" placeholder='Quantas pessoas' />
+                    </Fieldset>
+                    <Fieldset>
+                        <Label>Uso de ferramentas</Label>
+                        <Select>
+                            <option>Sim</option>
+                            <option>Não</option>
+                        </Select>
                     </Fieldset>
                     <Fieldset>
                         <Label>Dia</Label>
