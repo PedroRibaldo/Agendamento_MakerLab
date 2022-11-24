@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowBack, ArrowForward, DateControl, Logout, Month, StyledLink, UpperMenu, Year} from './styles';
+import { ArrowBack, ArrowForward, DateControl, Logout, Month, StyledLink, UpperMenu, Year, AddBooking} from './styles';
 import LogoFacamp from '../../assets/facampLogo.png'
 import { FiLogOut, FiChevronRight, FiChevronLeft } from "react-icons/fi"
+import { PopUp } from "../popUp/popUp";
 
 export const NavBar = (props) => {
     return (
@@ -23,7 +24,11 @@ export const NavBar = (props) => {
                         <FiLogOut size={"3rem"} color={"#063859"}/>
                     </Logout>
                 </StyledLink>
-            ) : <div></div>}
+            ) : (
+                <AddBooking>
+                    <PopUp></PopUp>
+                </AddBooking>
+            )}
         </UpperMenu>
     )
 }
