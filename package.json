@@ -1,0 +1,33 @@
+{
+  "name": "pief",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "private": true,
+  "scripts": {
+    "precommit": "git add .",
+    "commit": "cz",
+    "postcommit": "git push"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.5",
+    "husky": "^8.0.1"
+  },
+  "repository": "https://github.com/BrunoOno0410/Agendamento-MakerLab.git",
+  "author": "Bruno <brunogiordano.ono@gmail.com>"
+}
